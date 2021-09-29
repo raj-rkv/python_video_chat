@@ -18,9 +18,9 @@ def serverVideo(ip,port):
 
     while True:
 
-        file = open('srimg.jpg', "wb")
+        file = open('receiveimg.jpg', "wb")
 
-        data = conn.recv(122880)
+        data = conn.recv(1228800)
 
         if not (data):
 
@@ -31,7 +31,7 @@ def serverVideo(ip,port):
         file.close()
 
 
-        photo=cv2.imread('srimg.jpg')
+        photo=cv2.imread('receiveimg.jpg')
 
         cv2.imshow("server side", photo)
 
@@ -42,11 +42,11 @@ def serverVideo(ip,port):
 
         ret, photo = cap.read()
 
-        cv2.imwrite('ssimg.jpg',photo)
+        cv2.imwrite('serverimg.jpg',photo)
 
-        file = open('ssimg.jpg', 'rb')
+        file = open('serverimg.jpg', 'rb')
 
-        data = file.read(122880)
+        data = file.read(1228800)
 
         if not (data):
 
