@@ -1,4 +1,5 @@
-import socket ,cv2
+import socket
+import cv2
 
 def serverVideo(ip,port):
     HOST =ip # Standard loopback interface address (localhost)
